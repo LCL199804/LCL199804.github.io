@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title></title>
+  
+  <subtitle>hahahhahahahah</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://www.dtwordpress.xyz/"/>
+  <updated>2020-04-19T16:38:51.601Z</updated>
+  <id>https://www.dtwordpress.xyz/</id>
+  
+  <author>
+    <name>LCL</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>next分别设置主页、归档、分类以及标签的per_page</title>
+    <link href="https://www.dtwordpress.xyz/2020/04/19/next_fen_bie_she_zhi_zhu_ye_gui_dang_fen_lei_yi_ji_biao_qian_de_per_page/"/>
+    <id>https://www.dtwordpress.xyz/2020/04/19/next_fen_bie_she_zhi_zhu_ye_gui_dang_fen_lei_yi_ji_biao_qian_de_per_page/</id>
+    <published>2020-04-19T09:55:09.000Z</published>
+    <updated>2020-04-19T16:38:51.601Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一般来说，NexT主题设置分页数额时是包括首页和归档的。如果我设置首页的&lt;code&gt;per_page&lt;/code&gt;为6，那归档的&lt;code&gt;per_page&lt;/code&gt;也会为6；这时，如果我想首页分页，归档不分页或者数值更大，就需要自己设置了，以下是一些设置方法。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="学习&amp;技巧" scheme="https://www.dtwordpress.xyz/categories/lear-skill/"/>
+    
+    
+      <category term="next" scheme="https://www.dtwordpress.xyz/tags/next/"/>
+    
+      <category term="hexo" scheme="https://www.dtwordpress.xyz/tags/hexo/"/>
+    
+      <category term="分页" scheme="https://www.dtwordpress.xyz/tags/%E5%88%86%E9%A1%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux学习笔记分享，不断更新</title>
+    <link href="https://www.dtwordpress.xyz/2020/04/17/linux_xue_xi_bi_ji_fen_xiang_bu_duan_geng_xin/"/>
+    <id>https://www.dtwordpress.xyz/2020/04/17/linux_xue_xi_bi_ji_fen_xiang_bu_duan_geng_xin/</id>
+    <published>2020-04-17T09:08:34.000Z</published>
+    <updated>2020-04-19T16:38:51.600Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;以下是本人在学习&lt;code&gt;inux&lt;/code&gt;过程中对其知识点的整理，主要是命令的整理和使用，以及一些注意事项。&lt;br&gt;由于本人刚接触&lt;code&gt;Linux&lt;/code&gt;,还算是个小白，对其的理解可能比较肤浅，若有什么理解有误或不够恰当的地方，欢迎交流讨论！&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="学习&amp;技巧" scheme="https://www.dtwordpress.xyz/categories/lear-skill/"/>
+    
+    
+      <category term="linux" scheme="https://www.dtwordpress.xyz/tags/linux/"/>
+    
+      <category term="学习" scheme="https://www.dtwordpress.xyz/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="笔记" scheme="https://www.dtwordpress.xyz/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="命令操作" scheme="https://www.dtwordpress.xyz/tags/%E5%91%BD%E4%BB%A4%E6%93%8D%E4%BD%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sublime text 3可用注册码</title>
+    <link href="https://www.dtwordpress.xyz/2020/04/14/sublime_text_3_ke_yong_zhu_ce_ma/"/>
+    <id>https://www.dtwordpress.xyz/2020/04/14/sublime_text_3_ke_yong_zhu_ce_ma/</id>
+    <published>2020-04-14T07:49:32.000Z</published>
+    <updated>2020-04-19T16:38:51.602Z</updated>
+    
+    <summary type="html">
+    
+      目前sublime text 3可用注册码
+    
+    </summary>
+    
+    
+      <category term="学习&amp;技巧" scheme="https://www.dtwordpress.xyz/categories/lear-skill/"/>
+    
+    
+      <category term="sublime" scheme="https://www.dtwordpress.xyz/tags/sublime/"/>
+    
+      <category term="激活码" scheme="https://www.dtwordpress.xyz/tags/%E6%BF%80%E6%B4%BB%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在gitee/github上部署hexo博客以及我的next主题的设置</title>
+    <link href="https://www.dtwordpress.xyz/2020/04/12/zai_gitee_shang_bu_shu_hexo_bo_ke_yi_ji_wo_de_next_zhu_ti_de_she_zhi/"/>
+    <id>https://www.dtwordpress.xyz/2020/04/12/zai_gitee_shang_bu_shu_hexo_bo_ke_yi_ji_wo_de_next_zhu_ti_de_she_zhi/</id>
+    <published>2020-04-12T11:33:40.000Z</published>
+    <updated>2020-04-19T16:38:51.608Z</updated>
+    
+    <summary type="html">
+    
+      前几天相中了next主题，于是打算自己也部署一个。我有一个已经备案的wordpress网站，考虑到再备案挺麻烦的，于是就想用github或者gitee托管，这里给大家详细分享以下我的部署之路。
+    
+    </summary>
+    
+    
+      <category term="学习&amp;技巧" scheme="https://www.dtwordpress.xyz/categories/lear-skill/"/>
+    
+    
+      <category term="next" scheme="https://www.dtwordpress.xyz/tags/next/"/>
+    
+      <category term="hexo" scheme="https://www.dtwordpress.xyz/tags/hexo/"/>
+    
+      <category term="踩坑" scheme="https://www.dtwordpress.xyz/tags/%E8%B8%A9%E5%9D%91/"/>
+    
+      <category term="博客" scheme="https://www.dtwordpress.xyz/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="github" scheme="https://www.dtwordpress.xyz/tags/github/"/>
+    
+      <category term="gitee" scheme="https://www.dtwordpress.xyz/tags/gitee/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决git-receive-pack: command not found</title>
+    <link href="https://www.dtwordpress.xyz/2020/04/09/jie_jue_git_receive_pack_command_not_found/"/>
+    <id>https://www.dtwordpress.xyz/2020/04/09/jie_jue_git_receive_pack_command_not_found/</id>
+    <published>2020-04-08T16:37:09.000Z</published>
+    <updated>2020-04-19T16:38:51.609Z</updated>
+    
+    <summary type="html">
+    
+      出现这原因往往时因为重新安装了git而安装路径不一致，继而导致服务器无法找到该文件。这时候需要建立软链接。
+    
+    </summary>
+    
+    
+      <category term="学习&amp;技巧" scheme="https://www.dtwordpress.xyz/categories/lear-skill/"/>
+    
+    
+      <category term="踩坑" scheme="https://www.dtwordpress.xyz/tags/%E8%B8%A9%E5%9D%91/"/>
+    
+      <category term="Hexo" scheme="https://www.dtwordpress.xyz/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于Sublime Text 3 插件安装的问题解决</title>
+    <link href="https://www.dtwordpress.xyz/2020/04/08/guan_yu_sublime_text_3_cha_jian_an_zhuang_de_wen_ti_jie_jue/"/>
+    <id>https://www.dtwordpress.xyz/2020/04/08/guan_yu_sublime_text_3_cha_jian_an_zhuang_de_wen_ti_jie_jue/</id>
+    <published>2020-04-08T12:47:04.000Z</published>
+    <updated>2020-04-19T16:38:51.607Z</updated>
+    
+    <summary type="html">
+    
+      今天安装了Sublime,想安装sublime汉化插件时却出现了不少问题，没想到卸载安装之后却好了。
+    
+    </summary>
+    
+    
+      <category term="学习&amp;技巧" scheme="https://www.dtwordpress.xyz/categories/lear-skill/"/>
+    
+    
+      <category term="踩坑" scheme="https://www.dtwordpress.xyz/tags/%E8%B8%A9%E5%9D%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我的第一篇博文</title>
+    <link href="https://www.dtwordpress.xyz/2020/04/07/wo_de_di_yi_pian_bo_wen/"/>
+    <id>https://www.dtwordpress.xyz/2020/04/07/wo_de_di_yi_pian_bo_wen/</id>
+    <published>2020-04-07T10:11:21.000Z</published>
+    <updated>2020-04-19T16:38:51.609Z</updated>
+    
+    <summary type="html">
+    
+      这是我，这是我的网站
+    
+    </summary>
+    
+    
+      <category term="闲聊&amp;随笔" scheme="https://www.dtwordpress.xyz/categories/talk-essay/"/>
+    
+    
+      <category term="闲聊" scheme="https://www.dtwordpress.xyz/tags/%E9%97%B2%E8%81%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TIM它带着微信回来啦</title>
+    <link href="https://www.dtwordpress.xyz/2020/03/28/tim_ta_dai_zhao_wei_xin_hui_lai_la/"/>
+    <id>https://www.dtwordpress.xyz/2020/03/28/tim_ta_dai_zhao_wei_xin_hui_lai_la/</id>
+    <published>2020-03-28T09:31:06.000Z</published>
+    <updated>2020-04-19T16:38:51.601Z</updated>
+    
+    <summary type="html">
+    
+      没想到吧，TIM竟然更新了！
+    
+    </summary>
+    
+    
+      <category term="热点&amp;资讯" scheme="https://www.dtwordpress.xyz/categories/news/"/>
+    
+    
+      <category term="科技" scheme="https://www.dtwordpress.xyz/tags/%E7%A7%91%E6%8A%80/"/>
+    
+      <category term="资讯" scheme="https://www.dtwordpress.xyz/tags/%E8%B5%84%E8%AE%AF/"/>
+    
+  </entry>
+  
+</feed>

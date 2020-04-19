@@ -1,0 +1,19 @@
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><span id="sitetime"></span><script language="javascript">function siteTime(){window.setTimeout("siteTime()",1e3);var e=36e5,t=24*e,o=new Date,i=o.getFullYear(),a=o.getMonth()+1,n=o.getDate(),l=o.getHours(),r=o.getMinutes(),s=o.getSeconds(),M=Date.UTC(2020,4,6,15,0,0),g=Date.UTC(i,a,n,l,r,s)-M,m=Math.floor(g/31536e6),u=Math.floor(g/t-365*m),T=Math.floor((g-(365*m+u)*t)/e),f=Math.floor((g-(365*m+u)*t-T*e)/6e4),h=Math.floor((g-(365*m+u)*t-T*e-6e4*f)/1e3);document.getElementById("sitetime").innerHTML=" 『Just a little』 已运行"+u+" 天 "+T+" 小时 "+f+" 分钟 "+h+" 秒"}siteTime()</script><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
