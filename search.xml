@@ -245,4 +245,34 @@
         <tag>Hexo</tag>
       </tags>
   </entry>
+  <entry>
+    <title>再见盘神，再见百度网盘</title>
+    <url>/2020/04/20/zai_jian_pan_shen_zai_jian_bai_du_wang_pan/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>最近<code>Pandownload</code>开发者被捕的事在圈内闹得沸沸扬扬，盘神陨落，我们无不悲愤、痛惜；另一边，百度网盘却再次修改用户协议，通篇无不体现出我是你上帝的傲慢。像百度网盘这种不顾用户体验，靠着垄断地位为所欲为的行径，是走不远的。今天人们离不开百度网盘只是因为其丰富的资源，但那些丰富的资源，不也是一批批用户上传的吗；既然能上传，那也就能转移，只是时日问题罢了。</p><p>因此，我选择卸载百度网盘！</p><a id="more"></a><p>其实国内外也有许多优秀的网盘，国外的不说，毕竟墙摆在那，单说国内的，小资源蓝奏云，115，运营商网盘，坚果云等等；只是在资源丰富度方面基本为0，但作为个人存储网盘足够了。</p><p>有时觉得很纳闷，背靠这么丰富的资源，百度网盘完全能做得更好，起码在用户体验方面稍微努把力，就不至于招来这么多怨恨！</p><p>人们苦百度网盘久矣！</p><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>思想&amp;表达</category>
+      </categories>
+      <tags>
+        <tag>百度网盘</tag>
+        <tag>评论</tag>
+      </tags>
+  </entry>
 </search>

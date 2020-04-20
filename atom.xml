@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.dtwordpress.xyz/"/>
-  <updated>2020-04-19T16:38:51.601Z</updated>
+  <updated>2020-04-20T04:51:33.346Z</updated>
   <id>https://www.dtwordpress.xyz/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>再见盘神，再见百度网盘</title>
+    <link href="https://www.dtwordpress.xyz/2020/04/20/zai_jian_pan_shen_zai_jian_bai_du_wang_pan/"/>
+    <id>https://www.dtwordpress.xyz/2020/04/20/zai_jian_pan_shen_zai_jian_bai_du_wang_pan/</id>
+    <published>2020-04-20T04:22:12.000Z</published>
+    <updated>2020-04-20T04:51:33.346Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近&lt;code&gt;Pandownload&lt;/code&gt;开发者被捕的事在圈内闹得沸沸扬扬，盘神陨落，我们无不悲愤、痛惜；另一边，百度网盘却再次修改用户协议，通篇无不体现出我是你上帝的傲慢。像百度网盘这种不顾用户体验，靠着垄断地位为所欲为的行径，是走不远的。今天人们离不开百度网盘只是因为其丰富的资源，但那些丰富的资源，不也是一批批用户上传的吗；既然能上传，那也就能转移，只是时日问题罢了。&lt;/p&gt;&lt;p&gt;因此，我选择卸载百度网盘！&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="思想&amp;表达" scheme="https://www.dtwordpress.xyz/categories/think-expression/"/>
+    
+    
+      <category term="百度网盘" scheme="https://www.dtwordpress.xyz/tags/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/"/>
+    
+      <category term="评论" scheme="https://www.dtwordpress.xyz/tags/%E8%AF%84%E8%AE%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>next分别设置主页、归档、分类以及标签的per_page</title>
