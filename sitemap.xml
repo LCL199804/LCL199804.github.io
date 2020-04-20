@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.dtwordpress.xyz/about/index.html</loc>
+    
+    <lastmod>2020-04-20T15:02:38.860Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.dtwordpress.xyz/tools/index.html</loc>
     
-    <lastmod>2020-04-20T13:07:25.224Z</lastmod>
+    <lastmod>2020-04-20T15:02:32.816Z</lastmod>
     
   </url>
   
@@ -61,13 +68,6 @@
     <loc>https://www.dtwordpress.xyz/about/timer.html</loc>
     
     <lastmod>2020-04-19T16:38:51.611Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.dtwordpress.xyz/about/index.html</loc>
-    
-    <lastmod>2020-04-19T16:38:51.610Z</lastmod>
     
   </url>
   
