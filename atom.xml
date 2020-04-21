@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.dtwordpress.xyz/"/>
-  <updated>2020-04-20T04:51:33.346Z</updated>
+  <updated>2020-04-21T10:47:51.896Z</updated>
   <id>https://www.dtwordpress.xyz/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>win10永久关闭和开启Hyper-V的命令</title>
+    <link href="https://www.dtwordpress.xyz/2020/04/21/win10_yong_jiu_guan_bi_he_kai_qi_hyper_v_de_ming_ling/"/>
+    <id>https://www.dtwordpress.xyz/2020/04/21/win10_yong_jiu_guan_bi_he_kai_qi_hyper_v_de_ming_ling/</id>
+    <published>2020-04-21T10:45:50.000Z</published>
+    <updated>2020-04-21T10:47:51.896Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="学习&amp;技巧" scheme="https://www.dtwordpress.xyz/categories/lear-skill/"/>
+    
+    
+      <category term="经验" scheme="https://www.dtwordpress.xyz/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+      <category term="win10" scheme="https://www.dtwordpress.xyz/tags/win10/"/>
+    
+      <category term="Hyper-V" scheme="https://www.dtwordpress.xyz/tags/Hyper-V/"/>
+    
+  </entry>
   
   <entry>
     <title>再见盘神，再见百度网盘</title>

@@ -275,4 +275,35 @@
         <tag>资讯</tag>
       </tags>
   </entry>
+  <entry>
+    <title>win10永久关闭和开启Hyper-V的命令</title>
+    <url>/2020/04/21/win10_yong_jiu_guan_bi_he_kai_qi_hyper_v_de_ming_ling/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>安装<code>VMware</code>后发现开启不了虚拟机，根据网上资料得知，是因为微软默认开启了hyper-v,win10专业版可以在<code>启用或关闭windows功能</code>上关闭和开启<code>Hyper-V</code>,而家庭版可没这个选项；而且有时即便是在启用或关闭Windows功能里不启用Hyper-V,也不能解决问题，这时就需要彻底关闭hyper-v功能。</p><p>打开win10自带的命令窗口：</p><ol><li><p>关闭</p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">bcdedit /set hypervisorlaunchtype off<br></code></pre></td></tr></tbody></table></figure></li><li><p>打开</p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">bcdedit / set hypervisorlaunchtype auto<br></code></pre></td></tr></tbody></table></figure></li></ol><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>学习&amp;技巧</category>
+      </categories>
+      <tags>
+        <tag>经验</tag>
+        <tag>win10</tag>
+        <tag>Hyper-V</tag>
+      </tags>
+  </entry>
 </search>
