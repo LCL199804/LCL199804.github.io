@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.dtwordpress.xyz/"/>
-  <updated>2020-04-21T11:17:30.523Z</updated>
+  <updated>2020-04-21T11:19:02.965Z</updated>
   <id>https://www.dtwordpress.xyz/</id>
   
   <author>
@@ -21,17 +21,11 @@
     <link href="https://www.dtwordpress.xyz/2020/04/21/win10_yong_jiu_guan_bi_he_kai_qi_hyper_v_de_ming_ling/"/>
     <id>https://www.dtwordpress.xyz/2020/04/21/win10_yong_jiu_guan_bi_he_kai_qi_hyper_v_de_ming_ling/</id>
     <published>2020-04-21T10:45:50.000Z</published>
-    <updated>2020-04-21T11:17:30.523Z</updated>
+    <updated>2020-04-21T11:19:02.965Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
+      &lt;p&gt;安装&lt;code&gt;VMware&lt;/code&gt;后发现开启不了虚拟机，根据网上资料得知，是因为微软默认开启了hyper-v,win10专业版可以在&lt;code&gt;启用或关闭windows功能&lt;/code&gt;上关闭和开启&lt;code&gt;Hyper-V&lt;/code&gt;,而家庭版可没这个选项；而且有时即便是在启用或关闭Windows功能里不启用Hyper-V,也不能解决问题，这时就需要彻底关闭hyper-v功能。&lt;/p&gt;
     
     </summary>
     
