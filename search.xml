@@ -306,4 +306,95 @@
         <tag>Hyper-V</tag>
       </tags>
   </entry>
+  <entry>
+    <title>linux java 环境变量的部署</title>
+    <url>/2020/04/24/linux_java_huan_jing_bian_liang/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="默认安装路径"><a href="#默认安装路径" class="headerlink" title="默认安装路径"></a>默认安装路径</h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">/usr/lib/jvm/jdk~~~~<br></code></pre></td></tr></tbody></table></figure><h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">vim /etc/profile<br>加入：<br><span class="hljs-built_in">export</span> JAVA_HOME=/usr/lib/jvm/java-11-openjdk<br><span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:<span class="hljs-variable">$JAVA_HOME</span>/bin:<span class="hljs-variable">$JAVA_HOME</span>/jre/bin:<span class="hljs-variable">$PATH</span><br><span class="hljs-built_in">export</span> CLASSPATH=.:<span class="hljs-variable">$JAVA_HOME</span>/lib:<span class="hljs-variable">$JAVA_HOME</span>/jre/lib:<span class="hljs-variable">$JAVA_HOME</span>/lib/tools.jar:<span class="hljs-variable">$JAVA_HOME</span>/lib/dt.jar<br></code></pre></td></tr></tbody></table></figure><h2 id="检验是否成功"><a href="#检验是否成功" class="headerlink" title="检验是否成功"></a>检验是否成功</h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">java<br>javac<br>java --version<br>均有输出即可<br></code></pre></td></tr></tbody></table></figure><p>写一个<code>Hello World</code>试试吧！</p><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>学习&amp;技巧</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>踩坑</tag>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>manjaro安装搜狗输入法后，发现候选框中文乱码，此时需要安装中文字体</title>
+    <url>/2020/04/24/manjaro_zhong_wen_luan_ma_fang_kuang_an_zhuang_zhong_wen_zi_ti/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>有一些中文变成方框乱码，很可能是因为中文字体的丢失造成的，重新安装，输入下面命令：</p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">sudo pacman -S wqy-microhei<br></code></pre></td></tr></tbody></table></figure><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>学习&amp;技巧</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>踩坑</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决manjaro设置默认浏览器失效的问题</title>
+    <url>/2020/04/25/jie_jue_manjaro_she_zhi_mo_ren_liu_lan_qi_shi_xiao_de_wen_ti/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote><p><code>manjaro</code>默认浏览器为<code>firefox</code>即火狐。所以出现这种情况一般是我们卸载火狐之前没有将其他浏览器设置为默认浏览器程序，所以系统还是会将火狐识别为默认浏览器，这时就会出现一系列问题。</p></blockquote><p>解决办法也很简单，就三步:</p><a id="more"></a><ol><li>查看默认浏览器</li></ol><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">$ xdg-settings get default-web-browser<br>firefox      //一般为firefox<br></code></pre></td></tr></tbody></table></figure><ol start="2"><li>把<code>firefox</code>下载回来</li></ol><p>其实就是看第一步查看到的默认浏览器是什么，根据这个下载，这里以<code>Firefox</code>为例，一般也就是这个。</p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">$ sudo pacman -Sy firefox<br></code></pre></td></tr></tbody></table></figure><p>当然也可以进包管理器下载</p><ol start="3"><li>设置默认浏览器</li></ol><p>这里以<code>google chrome</code>为例</p><p>打开设置，搜索默认，点开设置即可</p><p><img data-src="http://typora.dtwordpress.xyz/img/image-20200425181418605.png" alt="设置chrome为默认浏览器"></p><p>到此就结束了，此时你可以顺便处置<code>Firefox</code>浏览器了。</p><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>学习&amp;技巧</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>踩坑</tag>
+      </tags>
+  </entry>
 </search>
