@@ -33,9 +33,9 @@
       <category term="学习&amp;技巧" scheme="https://www.dtwordpress.xyz/categories/lear-skill/"/>
     
     
-      <category term="linux" scheme="https://www.dtwordpress.xyz/tags/linux/"/>
-    
       <category term="踩坑" scheme="https://www.dtwordpress.xyz/tags/%E8%B8%A9%E5%9D%91/"/>
+    
+      <category term="linux" scheme="https://www.dtwordpress.xyz/tags/linux/"/>
     
   </entry>
   
@@ -44,7 +44,7 @@
     <link href="https://www.dtwordpress.xyz/2020/04/24/manjaro_zhong_wen_luan_ma_fang_kuang_an_zhuang_zhong_wen_zi_ti/"/>
     <id>https://www.dtwordpress.xyz/2020/04/24/manjaro_zhong_wen_luan_ma_fang_kuang_an_zhuang_zhong_wen_zi_ti/</id>
     <published>2020-04-24T15:45:04.000Z</published>
-    <updated>2020-04-25T11:02:19.970Z</updated>
+    <updated>2020-04-25T13:30:31.596Z</updated>
     
     <summary type="html">
     
@@ -62,9 +62,9 @@
       <category term="学习&amp;技巧" scheme="https://www.dtwordpress.xyz/categories/lear-skill/"/>
     
     
-      <category term="linux" scheme="https://www.dtwordpress.xyz/tags/linux/"/>
-    
       <category term="踩坑" scheme="https://www.dtwordpress.xyz/tags/%E8%B8%A9%E5%9D%91/"/>
+    
+      <category term="linux" scheme="https://www.dtwordpress.xyz/tags/linux/"/>
     
   </entry>
   
@@ -73,7 +73,7 @@
     <link href="https://www.dtwordpress.xyz/2020/04/24/linux_java_huan_jing_bian_liang/"/>
     <id>https://www.dtwordpress.xyz/2020/04/24/linux_java_huan_jing_bian_liang/</id>
     <published>2020-04-24T13:00:04.000Z</published>
-    <updated>2020-04-25T11:01:53.703Z</updated>
+    <updated>2020-04-25T13:30:31.593Z</updated>
     
     <summary type="html">
     
@@ -91,9 +91,9 @@
       <category term="学习&amp;技巧" scheme="https://www.dtwordpress.xyz/categories/lear-skill/"/>
     
     
-      <category term="linux" scheme="https://www.dtwordpress.xyz/tags/linux/"/>
-    
       <category term="踩坑" scheme="https://www.dtwordpress.xyz/tags/%E8%B8%A9%E5%9D%91/"/>
+    
+      <category term="linux" scheme="https://www.dtwordpress.xyz/tags/linux/"/>
     
       <category term="java" scheme="https://www.dtwordpress.xyz/tags/java/"/>
     
@@ -177,7 +177,7 @@
     <link href="https://www.dtwordpress.xyz/2020/04/17/linux_xue_xi_bi_ji_fen_xiang_bu_duan_geng_xin/"/>
     <id>https://www.dtwordpress.xyz/2020/04/17/linux_xue_xi_bi_ji_fen_xiang_bu_duan_geng_xin/</id>
     <published>2020-04-17T09:08:34.000Z</published>
-    <updated>2020-04-19T16:38:51.600Z</updated>
+    <updated>2020-04-25T13:30:31.592Z</updated>
     
     <summary type="html">
     
@@ -239,11 +239,11 @@
       <category term="学习&amp;技巧" scheme="https://www.dtwordpress.xyz/categories/lear-skill/"/>
     
     
-      <category term="踩坑" scheme="https://www.dtwordpress.xyz/tags/%E8%B8%A9%E5%9D%91/"/>
-    
       <category term="next" scheme="https://www.dtwordpress.xyz/tags/next/"/>
     
       <category term="hexo" scheme="https://www.dtwordpress.xyz/tags/hexo/"/>
+    
+      <category term="踩坑" scheme="https://www.dtwordpress.xyz/tags/%E8%B8%A9%E5%9D%91/"/>
     
       <category term="博客" scheme="https://www.dtwordpress.xyz/tags/%E5%8D%9A%E5%AE%A2/"/>
     
