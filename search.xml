@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Linux学习笔记分享，不断更新</title>
-    <url>/2020/04/17/linux_xue_xi_bi_ji_fen_xiang_bu_duan_geng_xin/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>以下是本人在学习<code>inux</code>过程中对其知识点的整理，主要是命令的整理和使用，以及一些注意事项。<br>由于本人刚接触<code>Linux</code>,还算是个小白，对其的理解可能比较肤浅，若有什么理解有误或不够恰当的地方，欢迎交流讨论！</p><a id="more"></a><h1 id="命令操作"><a href="#命令操作" class="headerlink" title="命令操作"></a>命令操作</h1><h2 id="常见命令操作"><a href="#常见命令操作" class="headerlink" title="常见命令操作"></a>常见命令操作</h2><blockquote><p>这部分操作命令比较简单，了解就行。</p></blockquote><h3 id="对目录的操作"><a href="#对目录的操作" class="headerlink" title="对目录的操作"></a>对目录的操作</h3><ol><li><p><code>cd</code>：打开目录</p></li><li><p><code>ls</code>：显示目录内容</p><ul><li><code>-l</code>：显示详情</li><li><code>-a</code>：显示隐藏文件或目录</li><li><code>-h</code>：人性化显示，主要是文件或目录大小用<code>kb</code>、<code>mb</code>度量</li></ul></li><li><p><code>mkdir</code>：创建目录</p><ul><li><code>-p</code> :递归创建目录</li></ul></li><li><p><code>rmdir</code>:删除一个空目录</p></li></ol><h3 id="对文件的操作"><a href="#对文件的操作" class="headerlink" title="对文件的操作"></a>对文件的操作</h3><ol><li><p><code>rm</code>:删除文件，裸命令不能删除目录</p><ul><li><code>-r</code>:删除目录<ul><li><code>-f</code>:强制执行</li><li><code>-rf</code>:强制删除</li></ul></li></ul></li><li><p><code>cp</code>:复制文件</p><ul><li><code>-r</code>:复制目录</li><li><code>-p</code>:保留文件属性</li></ul></li></ol><p><img data-src="http://typora.dtwordpress.xyz/img/image-20200414233826228.png" alt="image-20200414233826228"></p><ol start="3"><li><p><code>mv</code>:剪切、改名（文件、目录均可）</p></li><li><p><code>touch</code>: 创建一个空文件（不是文件夹）（可同时创建多个文件，空格隔开）</p></li><li><p><code>cat</code>: 浏览文件内容</p><ul><li><code>-n</code> : 显示行号</li></ul></li><li><p><code>tac</code>:反向显示文件内容</p></li><li><p><code>more</code>:分页显示文件内容(只能向下翻页，看完自动退出浏览)</p><ul><li>空格或<code>f</code>键翻页；</li><li>回车键一行一行显示；</li><li><code>q</code>键退出浏览</li></ul></li><li><p><code>less</code>:分页显示文件内容（可向上向下翻页，看完不自动退出）（与<code>more</code>不同处）</p><ul><li>上下光标可上下翻页</li><li><code>/关键词</code>可搜索</li></ul></li><li><p><code>head -n</code>:查看指定前几行，默认10行</p></li><li><p><code>tail -n</code>: 查看指定末尾后几行，默认最后10行</p></li><li><p><code>tail -f</code>:动态显示内容</p></li></ol><h3 id="连接操作"><a href="#连接操作" class="headerlink" title="连接操作"></a>连接操作</h3><ol><li><p>软链接与硬链接：</p><ul><li><p><code>ln -s []原文件[软连接.soft]</code>:建立软链接，相当于快捷方式。</p></li><li><p><code>ln [原文件][硬链接.hard]</code>:建立硬链接，相当于带<code>-p</code>（保留原属性）的复制，但与原文件同步；当删除原文件时，硬链接不受影响。</p></li></ul><p><img data-src="http://typora.dtwordpress.xyz/img/image-20200415003710013.png" alt="image-20200415003710013"></p></li></ol><p><img data-src="http://typora.dtwordpress.xyz/img/image-20200415003745693.png" alt="image-20200415003745693"></p><h2 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h2><h3 id="更改目录、文件权限"><a href="#更改目录、文件权限" class="headerlink" title="更改目录、文件权限"></a>更改目录、文件权限</h3><blockquote><p>只有所有者或<code>root</code>用户能更改目录和文件的权限</p></blockquote><h4 id="两种方式"><a href="#两种方式" class="headerlink" title="两种方式"></a>两种方式</h4><ol><li>加减法(不常用)</li></ol><p><img data-src="http://typora.dtwordpress.xyz/img/image_19.png" alt="image_19"></p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">u:所有者<br>g:所属组<br>o:其他用户<br>a:所有用户和组，包含上述三类<br>//例：<br>chmod u+x,g+w,o+w file //给file文件（文件夹）的所有者加执行权限，所属组加写权限，其他用户加写权限（- 同理）<br>chomd g=rwx file //文件（文件夹）的所属组加全部权限<br><br>//要修改一个目录下的所有文件为同一权限时，可用 -R 递归修改<br></code></pre></td></tr></tbody></table></figure><ol start="2"><li><p>数字法（常用）</p><p><img data-src="http://typora.dtwordpress.xyz/img/image_20.png" alt="image_20"></p></li></ol><blockquote><p>上图为不同权限所对应的数字，需牢记。</p></blockquote><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">// 例<br>chmod 755 file    //给文件file的所有者全部权限，所属组和其他用户读和执行权限<br></code></pre></td></tr></tbody></table></figure><h4 id="注意目录和文件的权限不同"><a href="#注意目录和文件的权限不同" class="headerlink" title="注意目录和文件的权限不同"></a>注意目录和文件的权限不同</h4><ol><li><p>比较目录和问价读写执行权限的区别</p><table><thead><tr><th>类别/权限</th><th>r</th><th>w</th><th>x</th></tr></thead><tbody><tr><td>目录</td><td>ls</td><td>mkdir/rmdir/rm</td><td>cd</td></tr><tr><td>文件</td><td>cat/less/more/head/tail</td><td>vim</td><td></td></tr></tbody></table><blockquote><p>可以看到，只要目录有写权限，就可以对其目录下的任何目录和文件执行新增或删除操作，而无需考虑他们的所有者、所属组以及权限。</p></blockquote></li></ol><h3 id="更换文件或目录的所有者、所属组"><a href="#更换文件或目录的所有者、所属组" class="headerlink" title="更换文件或目录的所有者、所属组"></a>更换文件或目录的所有者、所属组</h3><blockquote><p>只有 root 用户可以更改</p></blockquote><ol><li>更改所有者</li></ol><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">chown [用户] [文件或目录]<br>//例:<br>chown git <span class="hljs-built_in">test</span>    //将文件或目录 <span class="hljs-built_in">test</span> 的所有者更换为 git<br></code></pre></td></tr></tbody></table></figure><ol start="2"><li>更改所有组</li></ol><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">chgrp [用户] [文件或目录]<br>//例：<br>chgrp git <span class="hljs-built_in">test</span>     将文件或目录 <span class="hljs-built_in">test</span> 的所属组更换为 git<br></code></pre></td></tr></tbody></table></figure><ol start="3"><li><p>查看或修改目录或文件的默认权限</p><ul><li><p>查看</p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">[root@lcl-aliyun-2020 ~]<span class="hljs-comment"># umask -S</span><br>u=rwx,g=rx,o=rx<br></code></pre></td></tr></tbody></table></figure></li></ul></li></ol><blockquote><p>umask 查看的时目录的默认权限，文件的默认权限是在目录的默认权限上减去执行权限；其实很好理解，对于文件来说执行权限太过危险</p></blockquote><ul><li><p>修改</p><blockquote><p>一般不建议修改。</p></blockquote><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">umask</span> 022   //将目录默认权限改为755<br></code></pre></td></tr></tbody></table></figure></li></ul><p><strong>077 和 755 的逻辑转换类似于与或，见下图</strong></p><p><img data-src="http://typora.dtwordpress.xyz/img/image_21.png" alt="image_21"></p><blockquote><p>拿 <code>022</code>对应的权限与 <code>777</code>对比，有相同的就去掉，得到的就是默认权限。</p></blockquote><h2 id="搜索文件"><a href="#搜索文件" class="headerlink" title="搜索文件"></a>搜索文件</h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">find [搜索范围] [匹配条件]<br></code></pre></td></tr></tbody></table></figure><ol><li>根据文件名搜索</li></ol><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">find [搜索范围] -name   [搜索文件名]  //严格区分大小写<br>               -iname              //不分大小写<br>               -user              //寻找特定用户下的文件<br>               -grap              //寻找特定用户组下的文件<br>                         *        //模糊搜索<br>                         ？<br>例：<br>find /etc -name init            //在etc目录下寻找名叫init的文件<br>find /etc -name *init*          //寻找包含init的文件<br>find /etc -name init??          //寻找init开头6个字符的文件<br></code></pre></td></tr></tbody></table></figure><ol start="2"><li>根据文件大小寻找</li></ol><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">find [搜索范围] -size [搜索文件大小]         //文件大小需转换，假如100MB<br>                     + 100MB以上<br>                     - 100MB以下<br>例：假如在当前目录下寻找100MB以上的文件<br>find . -size +204800                     //100MB=102400KB=204800<br></code></pre></td></tr></tbody></table></figure><ol start="3"><li>根据其他属性查找</li></ol><p><img data-src="http://typora.dtwordpress.xyz/img/image-20200419153506932.png" alt="image-20200419153506932"></p><ol start="4"><li>用<code>-a</code>连接多条件查找</li></ol><p><img data-src="http://typora.dtwordpress.xyz/img/image-20200419153636662.png" alt="image-20200419153636662"></p><ol start="5"><li>用<code>-type</code>按文件属性查找</li></ol><p><img data-src="http://typora.dtwordpress.xyz/img/image-20200419153923693.png" alt="image-20200419153923693"></p><ol start="6"><li>用’-inum’根据<code>i</code>节点查找</li></ol><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">ls -i              //显示文件i节点<br></code></pre></td></tr></tbody></table></figure><p><img data-src="http://typora.dtwordpress.xyz/img/image-20200419154431038.png" alt="image-20200419154431038"></p><p>未完待续……</p><script>
+    <title>manjaro安装搜狗输入法后，发现候选框中文乱码，此时需要安装中文字体</title>
+    <url>/2020/04/24/manjaro_zhong_wen_luan_ma_fang_kuang_an_zhuang_zhong_wen_zi_ti/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>有一些中文变成方框乱码，很可能是因为中文字体的丢失造成的，重新安装，输入下面命令：</p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">sudo pacman -S wqy-microhei<br></code></pre></td></tr></tbody></table></figure><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -26,40 +26,8 @@
         <category>学习&amp;技巧</category>
       </categories>
       <tags>
+        <tag>踩坑</tag>
         <tag>linux</tag>
-        <tag>学习</tag>
-        <tag>笔记</tag>
-        <tag>命令操作</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>TIM它带着微信回来啦</title>
-    <url>/2020/03/28/tim_ta_dai_zhao_wei_xin_hui_lai_la/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote><p>众所周知，自从TIM团队去腾讯文档帮忙后，安卓版TIM就一直处于停更状态，不过时隔半年，在广大TIM粉丝的呼声下，在鸽得鸽不动的情况下，TIM携带着微信登录又回来了！</p></blockquote><h1 id="TIM的横空出世"><a href="#TIM的横空出世" class="headerlink" title="TIM的横空出世"></a>TIM的横空出世</h1><p>2017年4月TIM发布，着实令人意想不到。在有了QQ和微信两大社交软件后，腾讯又为何再推出一款社交软件？而且TIM从各方面来看都是奔着QQ去的，难道鉴于当时QQ的“不太景气”，腾讯想用TIM取代QQ，又或者是以此建立内部竞争，促使进步？如今看来，二者其实是有群体划分，并不冲突。</p><p>当时TIM最大的优势便是简洁和云文件同步。简洁是相对与QQ而言，不得不说真香；加之当时有个邀请活动，只要邀请3个好友加入TIM，就能获得永久的高级账号权限（注：官网说明一个月没登录将取消高级账号权限，真是666）。高级账号有什么权限呢？总的来说就是有100G的免费文件保存，有2年的聊天记录同步（比QQ会员还顶）。</p><h1 id="新TIM及下载地址"><a href="#新TIM及下载地址" class="headerlink" title="新TIM及下载地址"></a>新TIM及下载地址</h1><h2 id="特性："><a href="#特性：" class="headerlink" title="特性："></a>特性：</h2><ol><li>UI大改观，更简洁美观了</li><li>支持微信登录，但不能接受微信消息，且与QQ登录不互通，相当于创建新号</li><li>更多更新点击<span class="exturl" data-url="aHR0cHM6Ly93d3cuY29vbGFway5jb20vZmVlZC8xNzY0NjU1OT9zaGFyZUtleT1NbVUxTldVME1XWmlPV0U0TldVM1pqQmxZall+JmFtcDtzaGFyZVVpZD0xMDk4NjU1JmFtcDtzaGFyZUZyb209Y29tLmNvb2xhcGsubWFya2V0XzEwLjAuMw==">这里<i class="fa fa-external-link-alt"></i></span></li></ol><h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><ol><li>安卓：<span class="exturl" data-url="aHR0cHM6Ly93d3cubGFuem91cy5jb20vaWFxM2o3YQ==">蓝奏云<i class="fa fa-external-link-alt"></i></span>(安装后可先点击这个链接再注册哦，这是我的<span class="exturl" data-url="aHR0cHM6Ly90aW0ucXEuY29tL2h0ZG9jcy92aXAvc2hhcmUuaHRtbD9fd3Y9MTY3NzcyMTYmYW1wO193dlNiPTEmYW1wO3VpZD0qU3QqTVRneU9UWTROamczT0RFPQ==">邀请链接：<i class="fa fa-external-link-alt"></i></span>)</li><li>pc端：<span class="exturl" data-url="aHR0cHM6Ly93d3cubGFuem91cy5jb20vaWFxNHA2Yg==">蓝奏云<i class="fa fa-external-link-alt"></i></span></li></ol><h2 id="高级账号获取方法"><a href="#高级账号获取方法" class="headerlink" title="高级账号获取方法"></a>高级账号获取方法</h2><ol><li>注册千点击我的<span class="exturl" data-url="aHR0cHM6Ly90aW0ucXEuY29tL2h0ZG9jcy92aXAvc2hhcmUuaHRtbD9fd3Y9MTY3NzcyMTYmYW1wO193dlNiPTEmYW1wO3VpZD0qU3QqTVRneU9UWTROamczT0RFPQ==">邀请地址<i class="fa fa-external-link-alt"></i></span>，会进入邀请页面，然后分享就行。（推荐）</li><li>已注册用户可点击这个<span class="exturl" data-url="aHR0cHM6Ly81MS5ydXlvLm5ldC90ZXN0L3RpbS1nYW9qaXpoYW5naHUtYWZmLmh0bWw=">链接<i class="fa fa-external-link-alt"></i></span>生成邀请地址，然后分享就行。</li></ol><script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
-      <categories>
-        <category>热点&amp;资讯</category>
-      </categories>
-      <tags>
-        <tag>科技</tag>
-        <tag>资讯</tag>
       </tags>
   </entry>
   <entry>
@@ -88,15 +56,15 @@
         <category>学习&amp;技巧</category>
       </categories>
       <tags>
-        <tag>linux</tag>
         <tag>踩坑</tag>
+        <tag>linux</tag>
         <tag>java</tag>
       </tags>
   </entry>
   <entry>
-    <title>manjaro安装搜狗输入法后，发现候选框中文乱码，此时需要安装中文字体</title>
-    <url>/2020/04/24/manjaro_zhong_wen_luan_ma_fang_kuang_an_zhuang_zhong_wen_zi_ti/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>有一些中文变成方框乱码，很可能是因为中文字体的丢失造成的，重新安装，输入下面命令：</p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">sudo pacman -S wqy-microhei<br></code></pre></td></tr></tbody></table></figure><script>
+    <title>sublime text 3可用注册码</title>
+    <url>/2020/04/14/sublime_text_3_ke_yong_zhu_ce_ma/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>亲测目前是可用的，复制粘贴过去就行了！</p><figure class="highlight angelscript"><table><tbody><tr><td class="code"><pre><code class="hljs angelscript">----- BEGIN LICENSE -----<br>Member J2TeaM<br>Single User License<br>EA7E<span class="hljs-number">-1011316</span><br>D7DA350E <span class="hljs-number">1</span>B8B0760 <span class="hljs-number">972</span>F8B60 F3E64036<br>B9B4E234 F356F38F <span class="hljs-number">0</span>AD1E3B7 <span class="hljs-number">0E9</span>C5FAD<br>FA0A2ABE <span class="hljs-number">25</span>F65BD8 D51458E5 <span class="hljs-number">3923</span>CE80<br><span class="hljs-number">87428428</span> <span class="hljs-number">79079</span>A01 AA69F319 A1AF29A4<br>A684C2DC <span class="hljs-number">0</span>B1583D4 <span class="hljs-number">19</span>CBD290 <span class="hljs-number">217618</span>CD<br><span class="hljs-number">5653E0</span>A0 BACE3948 BB2EE45E <span class="hljs-number">422</span>D2C87<br>DD9AF44B <span class="hljs-number">99</span>C49590 D2DBDEE1 <span class="hljs-number">75860</span>FD2<br><span class="hljs-number">8</span>C8BB2AD B2ECE5A4 EFC08AF2 <span class="hljs-number">25</span>A9B864<br>------ END LICENSE ------​<br></code></pre></td></tr></tbody></table></figure><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -119,8 +87,8 @@
         <category>学习&amp;技巧</category>
       </categories>
       <tags>
-        <tag>linux</tag>
-        <tag>踩坑</tag>
+        <tag>sublime</tag>
+        <tag>激活码</tag>
       </tags>
   </entry>
   <entry>
@@ -155,36 +123,6 @@
       </tags>
   </entry>
   <entry>
-    <title>sublime text 3可用注册码</title>
-    <url>/2020/04/14/sublime_text_3_ke_yong_zhu_ce_ma/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>亲测目前是可用的，复制粘贴过去就行了！</p><figure class="highlight angelscript"><table><tbody><tr><td class="code"><pre><code class="hljs angelscript">----- BEGIN LICENSE -----<br>Member J2TeaM<br>Single User License<br>EA7E<span class="hljs-number">-1011316</span><br>D7DA350E <span class="hljs-number">1</span>B8B0760 <span class="hljs-number">972</span>F8B60 F3E64036<br>B9B4E234 F356F38F <span class="hljs-number">0</span>AD1E3B7 <span class="hljs-number">0E9</span>C5FAD<br>FA0A2ABE <span class="hljs-number">25</span>F65BD8 D51458E5 <span class="hljs-number">3923</span>CE80<br><span class="hljs-number">87428428</span> <span class="hljs-number">79079</span>A01 AA69F319 A1AF29A4<br>A684C2DC <span class="hljs-number">0</span>B1583D4 <span class="hljs-number">19</span>CBD290 <span class="hljs-number">217618</span>CD<br><span class="hljs-number">5653E0</span>A0 BACE3948 BB2EE45E <span class="hljs-number">422</span>D2C87<br>DD9AF44B <span class="hljs-number">99</span>C49590 D2DBDEE1 <span class="hljs-number">75860</span>FD2<br><span class="hljs-number">8</span>C8BB2AD B2ECE5A4 EFC08AF2 <span class="hljs-number">25</span>A9B864<br>------ END LICENSE ------​<br></code></pre></td></tr></tbody></table></figure><script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
-      <categories>
-        <category>学习&amp;技巧</category>
-      </categories>
-      <tags>
-        <tag>sublime</tag>
-        <tag>激活码</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>win10永久关闭和开启Hyper-V的命令</title>
     <url>/2020/04/21/win10_yong_jiu_guan_bi_he_kai_qi_hyper_v_de_ming_ling/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>安装<code>VMware</code>后发现开启不了虚拟机，根据网上资料得知，是因为微软默认开启了hyper-v,win10专业版可以在<code>启用或关闭windows功能</code>上关闭和开启<code>Hyper-V</code>,而家庭版可没这个选项；而且有时即便是在启用或关闭Windows功能里不启用Hyper-V,也不能解决问题，这时就需要彻底关闭hyper-v功能。</p><a id="more"></a><p>打开win10自带的命令窗口：</p><ol><li><p>关闭</p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">bcdedit /set hypervisorlaunchtype off<br></code></pre></td></tr></tbody></table></figure></li><li><p>打开</p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><code class="hljs shell">bcdedit / set hypervisorlaunchtype auto<br></code></pre></td></tr></tbody></table></figure></li></ol><script>
@@ -216,9 +154,100 @@
       </tags>
   </entry>
   <entry>
-    <title>关于Sublime Text 3 插件安装的问题解决</title>
-    <url>/2020/04/08/guan_yu_sublime_text_3_cha_jian_an_zhuang_de_wen_ti_jie_jue/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote><p>sublime真的是既简洁美观，运行速度又非常快，瞬间感觉喜欢上了它。无奈界面为英文，于是想通过安装插件实现汉化，但期间却遇到了三个问题。</p></blockquote><h2 id="三个问题"><a href="#三个问题" class="headerlink" title="三个问题"></a>三个问题</h2><ol><li>install Package报错，打不开仓库界面<br><img data-src="http://typora.dtwordpress.xyz/img/image-20200408211911016.png" alt="install Package erro"></li></ol><p>原因一般是连不上HTTPS服务器，网上的通用方法是替换channel_v3.json</p><ol start="2"><li>能进去仓库但下载时又提示错误，原因也是无法连接。</li></ol><p>我又在网上搜了好多教程，试了很多方法，网上的方法基本都试过了，但无一另外都没用。就在我绝望之时，我突然想到为啥不直接找作者源码呢，于是我就去github找，总算给我找到了。作者是<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JleGRm">rexda<i class="fa fa-external-link-alt"></i></span>，点击进他的github主页就能见到<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JleGRmL0NoaW5lc2VMb2NhbGl6YXRpb24=">ChineseLocaliztion<i class="fa fa-external-link-alt"></i></span>这个项目，然后git克隆到C:\Users\用户名\AppData\Roaming\Sublime Text 3\Packages。到此我以为结束了，但万万没想到第三个问题出现了。</p><ol start="3"><li>汉化是汉化了，但每一个菜单都同时出现多国文字。</li></ol><p>由于没截图，现在也无法复原，就只能文字描述了。</p><p>终于，一气之下我就把它卸了（用卸载工具完全卸载）。</p><p>但过了不久，我就越想越奇怪，我在网上搜到的这些问题，大多是一年前甚至几年前发出来的，有效性暂且不说，很少人遇到这些问题倒是很有可能。于是我又一次打开了官网安装。而这一次，却一点问题都没有，一切都是那么顺利。之后我又反复卸载安装了好几次，都没问题。那是为什么呢，可能是我第一次安装出了点小问题，也可能是恰巧那时候服务器宕机，也可能是我病急乱投医，反而越搞越乱，谁知道呢！有这些问题的朋友也可以试试先卸载（完全卸载，可用<span class="exturl" data-url="aHR0cHM6Ly9nZWVrdW5pbnN0YWxsZXIuY29tLw==">geek<i class="fa fa-external-link-alt"></i></span>等卸载软件）,再重新安装，也许问题就解决了！</p><blockquote><p>有时候事情就是这么奇怪，你越跟它较劲，越解决不了问题；而当我们冷静下来，事情也许就会变得更简单！</p></blockquote><script>
+    <title>Linux学习笔记分享，不断更新</title>
+    <url>/2020/04/17/linux_xue_xi_bi_ji_fen_xiang_bu_duan_geng_xin/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>以下是本人在学习<code>inux</code>过程中对其知识点的整理，主要是命令的整理和使用，以及一些注意事项。<br>由于本人刚接触<code>Linux</code>,还算是个小白，对其的理解可能比较肤浅，若有什么理解有误或不够恰当的地方，欢迎交流讨论！</p><a id="more"></a><h1 id="命令操作"><a href="#命令操作" class="headerlink" title="命令操作"></a>命令操作</h1><h2 id="常见命令操作"><a href="#常见命令操作" class="headerlink" title="常见命令操作"></a>常见命令操作</h2><blockquote><p>这部分操作命令比较简单，了解就行。</p></blockquote><h3 id="对目录的操作"><a href="#对目录的操作" class="headerlink" title="对目录的操作"></a>对目录的操作</h3><ol><li><p><code>cd</code>：打开目录</p></li><li><p><code>ls</code>：显示目录内容</p><ul><li><code>-l</code>：显示详情</li><li><code>-a</code>：显示隐藏文件或目录</li><li><code>-h</code>：人性化显示，主要是文件或目录大小用<code>kb</code>、<code>mb</code>度量</li></ul></li><li><p><code>mkdir</code>：创建目录</p><ul><li><code>-p</code> :递归创建目录</li></ul></li><li><p><code>rmdir</code>:删除一个空目录</p></li></ol><h3 id="对文件的操作"><a href="#对文件的操作" class="headerlink" title="对文件的操作"></a>对文件的操作</h3><ol><li><p><code>rm</code>:删除文件，裸命令不能删除目录</p><ul><li><code>-r</code>:删除目录<ul><li><code>-f</code>:强制执行</li><li><code>-rf</code>:强制删除</li></ul></li></ul></li><li><p><code>cp</code>:复制文件</p><ul><li><code>-r</code>:复制目录</li><li><code>-p</code>:保留文件属性</li></ul></li></ol><p><img data-src="http://typora.dtwordpress.xyz/img/image-20200414233826228.png" alt="image-20200414233826228"></p><ol start="3"><li><p><code>mv</code>:剪切、改名（文件、目录均可）</p></li><li><p><code>touch</code>: 创建一个空文件（不是文件夹）（可同时创建多个文件，空格隔开）</p></li><li><p><code>cat</code>: 浏览文件内容</p><ul><li><code>-n</code> : 显示行号</li></ul></li><li><p><code>tac</code>:反向显示文件内容</p></li><li><p><code>more</code>:分页显示文件内容(只能向下翻页，看完自动退出浏览)</p><ul><li>空格或<code>f</code>键翻页；</li><li>回车键一行一行显示；</li><li><code>q</code>键退出浏览</li></ul></li><li><p><code>less</code>:分页显示文件内容（可向上向下翻页，看完不自动退出）（与<code>more</code>不同处）</p><ul><li>上下光标可上下翻页</li><li><code>/关键词</code>可搜索</li></ul></li><li><p><code>head -n</code>:查看指定前几行，默认10行</p></li><li><p><code>tail -n</code>: 查看指定末尾后几行，默认最后10行</p></li><li><p><code>tail -f</code>:动态显示内容</p></li></ol><h3 id="连接操作"><a href="#连接操作" class="headerlink" title="连接操作"></a>连接操作</h3><ol><li><p>软链接与硬链接：</p><ul><li><p><code>ln -s []原文件[软连接.soft]</code>:建立软链接，相当于快捷方式。</p></li><li><p><code>ln [原文件][硬链接.hard]</code>:建立硬链接，相当于带<code>-p</code>（保留原属性）的复制，但与原文件同步；当删除原文件时，硬链接不受影响。</p></li></ul><p><img data-src="http://typora.dtwordpress.xyz/img/image-20200415003710013.png" alt="image-20200415003710013"></p></li></ol><p><img data-src="http://typora.dtwordpress.xyz/img/image-20200415003745693.png" alt="image-20200415003745693"></p><h2 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h2><h3 id="更改目录、文件权限"><a href="#更改目录、文件权限" class="headerlink" title="更改目录、文件权限"></a>更改目录、文件权限</h3><blockquote><p>只有所有者或<code>root</code>用户能更改目录和文件的权限</p></blockquote><h4 id="两种方式"><a href="#两种方式" class="headerlink" title="两种方式"></a>两种方式</h4><ol><li>加减法(不常用)</li></ol><p><img data-src="http://typora.dtwordpress.xyz/img/image_19.png" alt="image_19"></p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">u:所有者<br>g:所属组<br>o:其他用户<br>a:所有用户和组，包含上述三类<br>//例：<br>chmod u+x,g+w,o+w file //给file文件（文件夹）的所有者加执行权限，所属组加写权限，其他用户加写权限（- 同理）<br>chomd g=rwx file //文件（文件夹）的所属组加全部权限<br><br>//要修改一个目录下的所有文件为同一权限时，可用 -R 递归修改<br></code></pre></td></tr></tbody></table></figure><ol start="2"><li><p>数字法（常用）</p><p><img data-src="http://typora.dtwordpress.xyz/img/image_20.png" alt="image_20"></p></li></ol><blockquote><p>上图为不同权限所对应的数字，需牢记。</p></blockquote><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">// 例<br>chmod 755 file    //给文件file的所有者全部权限，所属组和其他用户读和执行权限<br></code></pre></td></tr></tbody></table></figure><h4 id="注意目录和文件的权限不同"><a href="#注意目录和文件的权限不同" class="headerlink" title="注意目录和文件的权限不同"></a>注意目录和文件的权限不同</h4><ol><li><p>比较目录和问价读写执行权限的区别</p><table><thead><tr><th>类别/权限</th><th>r</th><th>w</th><th>x</th></tr></thead><tbody><tr><td>目录</td><td>ls</td><td>mkdir/rmdir/rm</td><td>cd</td></tr><tr><td>文件</td><td>cat/less/more/head/tail</td><td>vim</td><td></td></tr></tbody></table><blockquote><p>可以看到，只要目录有写权限，就可以对其目录下的任何目录和文件执行新增或删除操作，而无需考虑他们的所有者、所属组以及权限。</p></blockquote></li></ol><h3 id="更换文件或目录的所有者、所属组"><a href="#更换文件或目录的所有者、所属组" class="headerlink" title="更换文件或目录的所有者、所属组"></a>更换文件或目录的所有者、所属组</h3><blockquote><p>只有 root 用户可以更改</p></blockquote><ol><li>更改所有者</li></ol><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">chown [用户] [文件或目录]<br>//例:<br>chown git <span class="hljs-built_in">test</span>    //将文件或目录 <span class="hljs-built_in">test</span> 的所有者更换为 git<br></code></pre></td></tr></tbody></table></figure><ol start="2"><li>更改所有组</li></ol><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">chgrp [用户] [文件或目录]<br>//例：<br>chgrp git <span class="hljs-built_in">test</span>     将文件或目录 <span class="hljs-built_in">test</span> 的所属组更换为 git<br></code></pre></td></tr></tbody></table></figure><ol start="3"><li><p>查看或修改目录或文件的默认权限</p><ul><li><p>查看</p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">[root@lcl-aliyun-2020 ~]<span class="hljs-comment"># umask -S</span><br>u=rwx,g=rx,o=rx<br></code></pre></td></tr></tbody></table></figure></li></ul></li></ol><blockquote><p>umask 查看的时目录的默认权限，文件的默认权限是在目录的默认权限上减去执行权限；其实很好理解，对于文件来说执行权限太过危险</p></blockquote><ul><li><p>修改</p><blockquote><p>一般不建议修改。</p></blockquote><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">umask</span> 022   //将目录默认权限改为755<br></code></pre></td></tr></tbody></table></figure></li></ul><p><strong>077 和 755 的逻辑转换类似于与或，见下图</strong></p><p><img data-src="http://typora.dtwordpress.xyz/img/image_21.png" alt="image_21"></p><blockquote><p>拿 <code>022</code>对应的权限与 <code>777</code>对比，有相同的就去掉，得到的就是默认权限。</p></blockquote><h2 id="搜索文件"><a href="#搜索文件" class="headerlink" title="搜索文件"></a>搜索文件</h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">find [搜索范围] [匹配条件]<br></code></pre></td></tr></tbody></table></figure><ol><li>根据文件名搜索</li></ol><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">find [搜索范围] -name   [搜索文件名]  //严格区分大小写<br>               -iname              //不分大小写<br>               -user              //寻找特定用户下的文件<br>               -grap              //寻找特定用户组下的文件<br>                         *        //模糊搜索<br>                         ？<br>例：<br>find /etc -name init            //在etc目录下寻找名叫init的文件<br>find /etc -name *init*          //寻找包含init的文件<br>find /etc -name init??          //寻找init开头6个字符的文件<br></code></pre></td></tr></tbody></table></figure><ol start="2"><li>根据文件大小寻找</li></ol><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">find [搜索范围] -size [搜索文件大小]         //文件大小需转换，假如100MB<br>                     + 100MB以上<br>                     - 100MB以下<br>例：假如在当前目录下寻找100MB以上的文件<br>find . -size +204800                     //100MB=102400KB=204800<br></code></pre></td></tr></tbody></table></figure><ol start="3"><li>根据其他属性查找</li></ol><p><img data-src="http://typora.dtwordpress.xyz/img/image-20200419153506932.png" alt="image-20200419153506932"></p><ol start="4"><li>用<code>-a</code>连接多条件查找</li></ol><p><img data-src="http://typora.dtwordpress.xyz/img/image-20200419153636662.png" alt="image-20200419153636662"></p><ol start="5"><li>用<code>-type</code>按文件属性查找</li></ol><p><img data-src="http://typora.dtwordpress.xyz/img/image-20200419153923693.png" alt="image-20200419153923693"></p><ol start="6"><li>用’-inum’根据<code>i</code>节点查找</li></ol><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">ls -i              //显示文件i节点<br></code></pre></td></tr></tbody></table></figure><p><img data-src="http://typora.dtwordpress.xyz/img/image-20200419154431038.png" alt="image-20200419154431038"></p><p>未完待续……</p><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>学习&amp;技巧</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>学习</tag>
+        <tag>笔记</tag>
+        <tag>命令操作</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的第一篇博文</title>
+    <url>/2020/04/07/wo_de_di_yi_pian_bo_wen/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h2><p>一个平平无奇的人，现大三学生!因为一次偶然间白嫖阿里云服务器，从此爱上了白嫖的感觉，哦不，是爱上了这个神奇的服务器世界！</p><h2 id="开始讲骚话"><a href="#开始讲骚话" class="headerlink" title="开始讲骚话"></a>开始讲骚话</h2><p><strong>我以及这个网站的前世今生</strong></p><p>我，一束平凡的烟火，只在万籁俱寂、暮色苍苍时带给世界光亮！</p><p>而这个网站，同样平凡，像淹没在网浪上的一点小水花，只有你凑近看，注意到它，抑或是它恰巧撞上了你的胸口，你们之间才可能发生浪漫故事！</p><p>所以说：</p><blockquote><p>有朋自远方来，不亦乐乎！</p></blockquote><p>在汤汤网海中，我遇见了JUST A LITTLE，我相信是天意；而在茫茫人海中，你们遇到了平凡的我，我相信是缘分。</p><p>咳咳…</p><p>本网站只是个人博客，纯粹心血来潮而建。当然一部分也是兴趣使然，一部分是觉得酷，我对酷的东西没有抵抗力。</p><p>当然，这个网站存在的意义，对我而言，是一种学习与交流。</p><p>凭借着每天一点点的学习进步，平凡也终将伟大！</p><p>​ 一点点</p><p>​ <code>just a little</code></p><p>喜欢就请<span class="exturl" data-url="aHR0cHM6Ly9sY2wyMDIwLmdpdGVlLmlvL2NvbnRhY3Qv">留言吧<i class="fa fa-external-link-alt"></i></span></p><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>闲聊&amp;随笔</category>
+      </categories>
+      <tags>
+        <tag>闲聊</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TIM它带着微信回来啦</title>
+    <url>/2020/03/28/tim_ta_dai_zhao_wei_xin_hui_lai_la/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote><p>众所周知，自从TIM团队去腾讯文档帮忙后，安卓版TIM就一直处于停更状态，不过时隔半年，在广大TIM粉丝的呼声下，在鸽得鸽不动的情况下，TIM携带着微信登录又回来了！</p></blockquote><h1 id="TIM的横空出世"><a href="#TIM的横空出世" class="headerlink" title="TIM的横空出世"></a>TIM的横空出世</h1><p>2017年4月TIM发布，着实令人意想不到。在有了QQ和微信两大社交软件后，腾讯又为何再推出一款社交软件？而且TIM从各方面来看都是奔着QQ去的，难道鉴于当时QQ的“不太景气”，腾讯想用TIM取代QQ，又或者是以此建立内部竞争，促使进步？如今看来，二者其实是有群体划分，并不冲突。</p><p>当时TIM最大的优势便是简洁和云文件同步。简洁是相对与QQ而言，不得不说真香；加之当时有个邀请活动，只要邀请3个好友加入TIM，就能获得永久的高级账号权限（注：官网说明一个月没登录将取消高级账号权限，真是666）。高级账号有什么权限呢？总的来说就是有100G的免费文件保存，有2年的聊天记录同步（比QQ会员还顶）。</p><h1 id="新TIM及下载地址"><a href="#新TIM及下载地址" class="headerlink" title="新TIM及下载地址"></a>新TIM及下载地址</h1><h2 id="特性："><a href="#特性：" class="headerlink" title="特性："></a>特性：</h2><ol><li>UI大改观，更简洁美观了</li><li>支持微信登录，但不能接受微信消息，且与QQ登录不互通，相当于创建新号</li><li>更多更新点击<span class="exturl" data-url="aHR0cHM6Ly93d3cuY29vbGFway5jb20vZmVlZC8xNzY0NjU1OT9zaGFyZUtleT1NbVUxTldVME1XWmlPV0U0TldVM1pqQmxZall+JmFtcDtzaGFyZVVpZD0xMDk4NjU1JmFtcDtzaGFyZUZyb209Y29tLmNvb2xhcGsubWFya2V0XzEwLjAuMw==">这里<i class="fa fa-external-link-alt"></i></span></li></ol><h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><ol><li>安卓：<span class="exturl" data-url="aHR0cHM6Ly93d3cubGFuem91cy5jb20vaWFxM2o3YQ==">蓝奏云<i class="fa fa-external-link-alt"></i></span>(安装后可先点击这个链接再注册哦，这是我的<span class="exturl" data-url="aHR0cHM6Ly90aW0ucXEuY29tL2h0ZG9jcy92aXAvc2hhcmUuaHRtbD9fd3Y9MTY3NzcyMTYmYW1wO193dlNiPTEmYW1wO3VpZD0qU3QqTVRneU9UWTROamczT0RFPQ==">邀请链接：<i class="fa fa-external-link-alt"></i></span>)</li><li>pc端：<span class="exturl" data-url="aHR0cHM6Ly93d3cubGFuem91cy5jb20vaWFxNHA2Yg==">蓝奏云<i class="fa fa-external-link-alt"></i></span></li></ol><h2 id="高级账号获取方法"><a href="#高级账号获取方法" class="headerlink" title="高级账号获取方法"></a>高级账号获取方法</h2><ol><li>注册千点击我的<span class="exturl" data-url="aHR0cHM6Ly90aW0ucXEuY29tL2h0ZG9jcy92aXAvc2hhcmUuaHRtbD9fd3Y9MTY3NzcyMTYmYW1wO193dlNiPTEmYW1wO3VpZD0qU3QqTVRneU9UWTROamczT0RFPQ==">邀请地址<i class="fa fa-external-link-alt"></i></span>，会进入邀请页面，然后分享就行。（推荐）</li><li>已注册用户可点击这个<span class="exturl" data-url="aHR0cHM6Ly81MS5ydXlvLm5ldC90ZXN0L3RpbS1nYW9qaXpoYW5naHUtYWZmLmh0bWw=">链接<i class="fa fa-external-link-alt"></i></span>生成邀请地址，然后分享就行。</li></ol><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>热点&amp;资讯</category>
+      </categories>
+      <tags>
+        <tag>科技</tag>
+        <tag>资讯</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决git-receive-pack: command not found</title>
+    <url>/2020/04/09/jie_jue_git_receive_pack_command_not_found/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="问题详情"><a href="#问题详情" class="headerlink" title="问题详情"></a>问题详情</h2><p>今天使用git将hexo博客推送到服务器上的时候出现这个问题，一开始我以为是权限问题，检查了一番确实发现博客目录所有者发生了变化，解决之后再重新运行<code>hexo d</code>发现还是不行，这时有了以下报错信息：</p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">bash: git-receive-pack: <span class="hljs-built_in">command</span> not found（找不到命令）<br>fatal: Could not <span class="hljs-built_in">read</span> from remote repository.（致命：无法从远程存储库中读取。）<br>Please make sure you have the correct access rights（请确保您拥有正确的访问权限）<br>and the repository exists.（存储库存在。）<br></code></pre></td></tr></tbody></table></figure><p>根据提示，服务器无法找到<code>git-receive-pack</code>,这让我想到今天刚好重新安装了一个新版的git，卸载了原来的，安装目录也发生了改变。</p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>于是原因就变得很简单：我远程服务器上的git安装路径是/usr/local/git，不是默认路径，<code>git-receive-pack</code>应该要在<code>/usr/bin/git-receive-pack</code>目录中，所以应当建立链接文件：</p><figure class="highlight awk"><table><tbody><tr><td class="code"><pre><code class="hljs awk">ln -s <span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/git/</span>bin<span class="hljs-regexp">/git-receive-pack /u</span>sr<span class="hljs-regexp">/bin/gi</span>t-receive-pack<br></code></pre></td></tr></tbody></table></figure><p>根据自己的目录改变即可。</p><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -242,36 +271,7 @@
       </categories>
       <tags>
         <tag>踩坑</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>再见盘神，再见百度网盘</title>
-    <url>/2020/04/20/zai_jian_pan_shen_zai_jian_bai_du_wang_pan/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>最近<code>Pandownload</code>开发者被捕的事在圈内闹得沸沸扬扬，盘神陨落，我们无不悲愤、痛惜；另一边，百度网盘却再次修改用户协议，通篇无不体现出我是你上帝的傲慢。像百度网盘这种不顾用户体验，靠着垄断地位为所欲为的行径，是走不远的。今天人们离不开百度网盘只是因为其丰富的资源，但那些丰富的资源，不也是一批批用户上传的吗；既然能上传，那也就能转移，只是时日问题罢了。</p><p>因此，我选择卸载百度网盘！</p><a id="more"></a><p>其实国内外也有许多优秀的网盘，国外的不说，毕竟墙摆在那，单说国内的，小资源蓝奏云，115，运营商网盘，坚果云等等；只是在资源丰富度方面基本为0，但作为个人存储网盘足够了。</p><p>有时觉得很纳闷，背靠这么丰富的资源，百度网盘完全能做得更好，起码在用户体验方面稍微努把力，就不至于招来这么多怨恨！</p><p>人们苦百度网盘久矣！</p><script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
-      <categories>
-        <category>思想&amp;表达</category>
-      </categories>
-      <tags>
-        <tag>百度网盘</tag>
-        <tag>评论</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -309,9 +309,9 @@
       </tags>
   </entry>
   <entry>
-    <title>我的第一篇博文</title>
-    <url>/2020/04/07/wo_de_di_yi_pian_bo_wen/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h2><p>一个平平无奇的人，现大三学生!因为一次偶然间白嫖阿里云服务器，从此爱上了白嫖的感觉，哦不，是爱上了这个神奇的服务器世界！</p><h2 id="开始讲骚话"><a href="#开始讲骚话" class="headerlink" title="开始讲骚话"></a>开始讲骚话</h2><p><strong>我以及这个网站的前世今生</strong></p><p>我，一束平凡的烟火，只在万籁俱寂、暮色苍苍时带给世界光亮！</p><p>而这个网站，同样平凡，像淹没在网浪上的一点小水花，只有你凑近看，注意到它，抑或是它恰巧撞上了你的胸口，你们之间才可能发生浪漫故事！</p><p>所以说：</p><blockquote><p>有朋自远方来，不亦乐乎！</p></blockquote><p>在汤汤网海中，我遇见了JUST A LITTLE，我相信是天意；而在茫茫人海中，你们遇到了平凡的我，我相信是缘分。</p><p>咳咳…</p><p>本网站只是个人博客，纯粹心血来潮而建。当然一部分也是兴趣使然，一部分是觉得酷，我对酷的东西没有抵抗力。</p><p>当然，这个网站存在的意义，对我而言，是一种学习与交流。</p><p>凭借着每天一点点的学习进步，平凡也终将伟大！</p><p>​ 一点点</p><p>​ <code>just a little</code></p><p>喜欢就请<span class="exturl" data-url="aHR0cHM6Ly9sY2wyMDIwLmdpdGVlLmlvL2NvbnRhY3Qv">留言吧<i class="fa fa-external-link-alt"></i></span></p><script>
+    <title>再见盘神，再见百度网盘</title>
+    <url>/2020/04/20/zai_jian_pan_shen_zai_jian_bai_du_wang_pan/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>最近<code>Pandownload</code>开发者被捕的事在圈内闹得沸沸扬扬，盘神陨落，我们无不悲愤、痛惜；另一边，百度网盘却再次修改用户协议，通篇无不体现出我是你上帝的傲慢。像百度网盘这种不顾用户体验，靠着垄断地位为所欲为的行径，是走不远的。今天人们离不开百度网盘只是因为其丰富的资源，但那些丰富的资源，不也是一批批用户上传的吗；既然能上传，那也就能转移，只是时日问题罢了。</p><p>因此，我选择卸载百度网盘！</p><a id="more"></a><p>其实国内外也有许多优秀的网盘，国外的不说，毕竟墙摆在那，单说国内的，小资源蓝奏云，115，运营商网盘，坚果云等等；只是在资源丰富度方面基本为0，但作为个人存储网盘足够了。</p><p>有时觉得很纳闷，背靠这么丰富的资源，百度网盘完全能做得更好，起码在用户体验方面稍微努把力，就不至于招来这么多怨恨！</p><p>人们苦百度网盘久矣！</p><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -331,16 +331,17 @@
           });
       </script>]]></content>
       <categories>
-        <category>闲聊&amp;随笔</category>
+        <category>思想&amp;表达</category>
       </categories>
       <tags>
-        <tag>闲聊</tag>
+        <tag>百度网盘</tag>
+        <tag>评论</tag>
       </tags>
   </entry>
   <entry>
-    <title>解决git-receive-pack: command not found</title>
-    <url>/2020/04/09/jie_jue_git_receive_pack_command_not_found/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="问题详情"><a href="#问题详情" class="headerlink" title="问题详情"></a>问题详情</h2><p>今天使用git将hexo博客推送到服务器上的时候出现这个问题，一开始我以为是权限问题，检查了一番确实发现博客目录所有者发生了变化，解决之后再重新运行<code>hexo d</code>发现还是不行，这时有了以下报错信息：</p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">bash: git-receive-pack: <span class="hljs-built_in">command</span> not found（找不到命令）<br>fatal: Could not <span class="hljs-built_in">read</span> from remote repository.（致命：无法从远程存储库中读取。）<br>Please make sure you have the correct access rights（请确保您拥有正确的访问权限）<br>and the repository exists.（存储库存在。）<br></code></pre></td></tr></tbody></table></figure><p>根据提示，服务器无法找到<code>git-receive-pack</code>,这让我想到今天刚好重新安装了一个新版的git，卸载了原来的，安装目录也发生了改变。</p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>于是原因就变得很简单：我远程服务器上的git安装路径是/usr/local/git，不是默认路径，<code>git-receive-pack</code>应该要在<code>/usr/bin/git-receive-pack</code>目录中，所以应当建立链接文件：</p><figure class="highlight awk"><table><tbody><tr><td class="code"><pre><code class="hljs awk">ln -s <span class="hljs-regexp">/usr/</span>local<span class="hljs-regexp">/git/</span>bin<span class="hljs-regexp">/git-receive-pack /u</span>sr<span class="hljs-regexp">/bin/gi</span>t-receive-pack<br></code></pre></td></tr></tbody></table></figure><p>根据自己的目录改变即可。</p><script>
+    <title>关于Sublime Text 3 插件安装的问题解决</title>
+    <url>/2020/04/08/guan_yu_sublime_text_3_cha_jian_an_zhuang_de_wen_ti_jie_jue/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote><p>sublime真的是既简洁美观，运行速度又非常快，瞬间感觉喜欢上了它。无奈界面为英文，于是想通过安装插件实现汉化，但期间却遇到了三个问题。</p></blockquote><h2 id="三个问题"><a href="#三个问题" class="headerlink" title="三个问题"></a>三个问题</h2><ol><li>install Package报错，打不开仓库界面<br><img data-src="http://typora.dtwordpress.xyz/img/image-20200408211911016.png" alt="install Package erro"></li></ol><p>原因一般是连不上HTTPS服务器，网上的通用方法是替换channel_v3.json</p><ol start="2"><li>能进去仓库但下载时又提示错误，原因也是无法连接。</li></ol><p>我又在网上搜了好多教程，试了很多方法，网上的方法基本都试过了，但无一另外都没用。就在我绝望之时，我突然想到为啥不直接找作者源码呢，于是我就去github找，总算给我找到了。作者是<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JleGRm">rexda<i class="fa fa-external-link-alt"></i></span>，点击进他的github主页就能见到<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3JleGRmL0NoaW5lc2VMb2NhbGl6YXRpb24=">ChineseLocaliztion<i class="fa fa-external-link-alt"></i></span>这个项目，然后git克隆到C:\Users\用户名\AppData\Roaming\Sublime Text 3\Packages。到此我以为结束了，但万万没想到第三个问题出现了。</p><ol start="3"><li>汉化是汉化了，但每一个菜单都同时出现多国文字。</li></ol><p>由于没截图，现在也无法复原，就只能文字描述了。</p><p>终于，一气之下我就把它卸了（用卸载工具完全卸载）。</p><p>但过了不久，我就越想越奇怪，我在网上搜到的这些问题，大多是一年前甚至几年前发出来的，有效性暂且不说，很少人遇到这些问题倒是很有可能。于是我又一次打开了官网安装。而这一次，却一点问题都没有，一切都是那么顺利。之后我又反复卸载安装了好几次，都没问题。那是为什么呢，可能是我第一次安装出了点小问题，也可能是恰巧那时候服务器宕机，也可能是我病急乱投医，反而越搞越乱，谁知道呢！有这些问题的朋友也可以试试先卸载（完全卸载，可用<span class="exturl" data-url="aHR0cHM6Ly9nZWVrdW5pbnN0YWxsZXIuY29tLw==">geek<i class="fa fa-external-link-alt"></i></span>等卸载软件）,再重新安装，也许问题就解决了！</p><blockquote><p>有时候事情就是这么奇怪，你越跟它较劲，越解决不了问题；而当我们冷静下来，事情也许就会变得更简单！</p></blockquote><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -364,7 +365,6 @@
       </categories>
       <tags>
         <tag>踩坑</tag>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -393,8 +393,8 @@
         <category>学习&amp;技巧</category>
       </categories>
       <tags>
-        <tag>linux</tag>
         <tag>踩坑</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
 </search>
