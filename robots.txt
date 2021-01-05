@@ -13,5 +13,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: https://www.dtwordpress.xyz/sitemap.xml
-Sitemap: https://www.dtwordpress.xyz/baidusitemap.xml
+Sitemap: https://dtwordpress.xyz/sitemap.xml
+Sitemap: https://dtwordpress.xyz/baidusitemap.xml
